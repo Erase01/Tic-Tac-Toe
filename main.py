@@ -10,6 +10,8 @@ class Spielfeld():
     
     def __init__(self):
         self.brett = (0,0,0,0,0,0,0,0,0)
+        self.player1 = ""
+        self.player2 = ""
     
     def feld():
         print("   |    |   ")
@@ -18,8 +20,14 @@ class Spielfeld():
         print("------------")
         print("   |    |   ")
 
-    def symbol():
-        pass   
+    def symbol(self):
+        print("")
+        self.player1 = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
+        if self.player1 == "X" or "x":
+            self.player2 = "O"
+        elif self.player1 == "O" or "o" or "0":
+            self.player2 = "X"
+            
 
     def spielzug(self):
         print("")
@@ -31,5 +39,12 @@ class Spielfeld():
             self.brett[zahl] = figur
 
 
+instanz1 = Spielfeld()
 
+print("########  ###                ########                          ########\n")
+print("  ###            ######        ###     ######     ######         ###     ######     ######   \n")
+print("  ###     ###    ###           ###     ##  ##     ###            ###     ##  ##     ####     \n")
+print("  ###     ###    ######        ###     ##### #    ######         ###     ######     ######   \n")
+
+instanz1.symbol()
 
