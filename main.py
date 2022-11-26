@@ -20,9 +20,8 @@ class Spielfeld():
         print("------------")
         print("   |    |   ")
 
-    def symbol(self):
+    def symbol(self, zeichen):
         print("")
-        self.player1 = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
         if self.player1 == "X" or "x":
             self.player2 = "O"
         elif self.player1 == "O" or "o" or "0":
@@ -46,5 +45,6 @@ print("  ###            ######        ###     ######     ######         ###     
 print("  ###     ###    ###           ###     ##  ##     ###            ###     ##  ##     ####     \n")
 print("  ###     ###    ######        ###     ##### #    ######         ###     ######     ######   \n")
 
-instanz1.symbol()
+zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
+instanz1.symbol(zeichen)
 
