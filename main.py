@@ -9,10 +9,11 @@
 class Spielfeld():
     
     def __init__(self):
-        self.brett = (0,0,0,0,0,0,0,0,0)
+        self.brett = [0,0,0,0,0,0,0,0,0]
         self.player1 = ""
         self.player2 = ""
         self.zeichen = ""
+        self.ingame = True
     
     def feld():
         print("   |    |   ")
@@ -35,23 +36,24 @@ class Spielfeld():
             
 
     def spielzug(self):
-        print("")
-        if self.figur == "X":
-            zahl = int(input("Auf welches Feld wollen sie setzen: "))
-            self.brett[zahl]
-            if self.brett[zahl] != 0:
-                print("Hier wurde bereits hingesetzt!")
-            elif self.brett[zahl] == 0:
-                self.brett[zahl] = self.figur
-                self.figur = "O"
-        else:
-            zahl = int(input("Auf welches Feld wollen sie setzen: "))
-            self.brett[zahl]
-            if self.brett[zahl] != 0:
-                print("Hier wurde bereits hingesetzt!")
-            elif self.brett[zahl] == 0:
-                self.brett[zahl] = self.figur
-                self.figur = "X"
+        while self.ingame == True:
+            print("")
+            if self.figur == "X":
+                zahl = int(input("Auf welches Feld wollen sie setzen: "))
+                self.brett[zahl]
+                if self.brett[zahl] != 0:
+                    print("Hier wurde bereits hingesetzt!")
+                elif self.brett[zahl] == 0:
+                    self.brett[zahl] = self.figur
+                    self.figur = "O"
+            else:
+                zahl = int(input("Auf welches Feld wollen sie setzen: "))
+                self.brett[zahl]
+                if self.brett[zahl] != 0:
+                    print("Hier wurde bereits hingesetzt!")
+                elif self.brett[zahl] == 0:
+                    self.brett[zahl] = self.figur
+                    self.figur = "X"
 
 
 instanz1 = Spielfeld()
@@ -63,4 +65,4 @@ print("  ###     ###    ######        ###     ##### #    ######         ###     
 
 zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
 instanz1.symbol(zeichen)
-
+instanz1.spielzug()
