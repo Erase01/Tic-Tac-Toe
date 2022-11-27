@@ -22,9 +22,11 @@ class Spielfeld():
 
     def symbol(self, zeichen):
         print("")
-        if self.player1 == "X" or "x":
+        if zeichen == "X" or "x":
+            self.player1 = "X"
             self.player2 = "O"
-        elif self.player1 == "O" or "o" or "0":
+        elif zeichen == "O" or "o" or "0":
+            self.player1 = "O"
             self.player2 = "X"
             
 
