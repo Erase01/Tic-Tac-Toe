@@ -12,6 +12,7 @@ class Spielfeld():
         self.brett = (0,0,0,0,0,0,0,0,0)
         self.player1 = ""
         self.player2 = ""
+        self.zeichen = ""
     
     def feld():
         print("   |    |   ")
@@ -22,22 +23,35 @@ class Spielfeld():
 
     def symbol(self, zeichen):
         print("")
-        if zeichen == "X" or "x":
-            self.player1 = "X"
-            self.player2 = "O"
-        elif zeichen == "O" or "o" or "0":
-            self.player1 = "O"
-            self.player2 = "X"
+        if self.zeichen == "X" or "x":
+            #self.player1 = "X"
+            #self.player2 = "O"
+            self.figur = "X"
+
+        elif self.zeichen == "O" or "o" or "0":
+            #self.player1 = "O"
+            #self.player2 = "X"
+            self.figur = "O"
             
 
     def spielzug(self):
         print("")
-        zahl = int(input("Auf welches Feld wollen sie setzen: "))
-        self.brett[zahl]
-        if self.brett[zahl] != 0:
-            print("Hier wurde bereits hingesetzt!")
-        elif self.brett[zahl] == 0:
-            self.brett[zahl] = figur
+        if self.figur == "X":
+            zahl = int(input("Auf welches Feld wollen sie setzen: "))
+            self.brett[zahl]
+            if self.brett[zahl] != 0:
+                print("Hier wurde bereits hingesetzt!")
+            elif self.brett[zahl] == 0:
+                self.brett[zahl] = self.figur
+                self.figur = "O"
+        else:
+            zahl = int(input("Auf welches Feld wollen sie setzen: "))
+            self.brett[zahl]
+            if self.brett[zahl] != 0:
+                print("Hier wurde bereits hingesetzt!")
+            elif self.brett[zahl] == 0:
+                self.brett[zahl] = self.figur
+                self.figur = "X"
 
 
 instanz1 = Spielfeld()
