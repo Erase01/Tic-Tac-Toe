@@ -39,22 +39,26 @@ class Spielfeld():
         while self.ingame == True:
             print("")
             if self.figur == "X":
+                print("Player", self.figur, "ist an der Reihe!")
                 zahl = int(input("Auf welches Feld wollen sie setzen: "))
                 self.brett[zahl]
                 if self.brett[zahl] != 0:
-                    print("Hier wurde bereits hingesetzt!")
+                    print("\nHier wurde bereits hingesetzt!")
                 elif self.brett[zahl] == 0:
                     self.brett[zahl] = self.figur
                     self.figur = "O"
             else:
+                print("Player", self.figur, "ist an der Reihe!")
                 zahl = int(input("Auf welches Feld wollen sie setzen: "))
                 self.brett[zahl]
                 if self.brett[zahl] != 0:
-                    print("Hier wurde bereits hingesetzt!")
+                    print("\nHier wurde bereits hingesetzt!")
                 elif self.brett[zahl] == 0:
                     self.brett[zahl] = self.figur
                     self.figur = "X"
 
+    def gewinnen(self):
+        pass
 
 instanz1 = Spielfeld()
 
