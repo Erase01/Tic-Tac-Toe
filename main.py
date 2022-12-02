@@ -56,7 +56,9 @@ class Spielfeld():
                 elif self.brett[zahl] == 0:
                     self.brett[zahl] = self.figur
                     self.figur = "X"
-
+    
+    def board(self):
+        print(self.brett[0], "  |  ", self.brett[1], "  |  ", self.brett[2], "\n  |  ", self.brett[3], "  |  ", self.brett[4], "  |  ", self.brett[5], "\n  |  ", self.brett[6], "  |  ", self.brett[7], "  |  ", self.brett[8], "  |  ", self.brett[9])
     def gewinnen(self):
         pass
 
