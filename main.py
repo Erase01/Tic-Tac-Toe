@@ -83,7 +83,7 @@ class Spielzug(Spielfeld):
             endwert = self.brett[7]
             print("Player", endwert, "hat Gewonnen!")
             self.replay()
-        elif self.brett[0][4][8] == 'X' or self.brett[0][4][8] == 'O':
+        elif self.brett[0][4][8] == 'X' or self.brett[0][4][8] == 'O':      # ToDo: überprüfung bearbeiten      
             endwert = self.brett[4]
             print("Player", endwert, "hat Gewonnen!")
             self.replay()
