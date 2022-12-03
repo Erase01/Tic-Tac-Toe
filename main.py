@@ -23,7 +23,7 @@ class Spielfeld():
         print("   |    |   ")
 
     def board(self):
-        return (self.brett[0], "  |  ", self.brett[1], "  |  ", self.brett[2], "\n  |  ", self.brett[3], "  |  ", self.brett[4], "  |  ", self.brett[5], "\n  |  ", self.brett[6], "  |  ", self.brett[7], "  |  ", self.brett[8], "  |  ")
+        print ("     ", self.brett[0], "  |  ", self.brett[1], "  |  ", self.brett[2], "\n  |  ", self.brett[3], "  |  ", self.brett[4], "  |  ", self.brett[5], "\n  |  ", self.brett[6], "  |  ", self.brett[7], "  |  ", self.brett[8], "  |  ")
 
 class Spielzug(Spielfeld):
 
@@ -52,7 +52,7 @@ class Spielzug(Spielfeld):
                 elif self.brett[zahl] == 0:
                     self.brett[zahl] = self.figur
                     self.figur = "O"
-                    print(self.board())
+                    self.board()
             else:
                 print("Player", self.figur, "ist an der Reihe!")
                 zahl = int(input("Auf welches Feld wollen sie setzen: "))
@@ -62,7 +62,7 @@ class Spielzug(Spielfeld):
                 elif self.brett[zahl] == 0:
                     self.brett[zahl] = self.figur
                     self.figur = "X"
-                    print(self.board())
+                    self.board()
     
     
     def gewinnen(self):
