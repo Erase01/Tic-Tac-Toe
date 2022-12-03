@@ -22,6 +22,11 @@ class Spielfeld():
         print("------------")
         print("   |    |   ")
 
+    def board(self):
+        return (self.brett[0], "  |  ", self.brett[1], "  |  ", self.brett[2], "\n  |  ", self.brett[3], "  |  ", self.brett[4], "  |  ", self.brett[5], "\n  |  ", self.brett[6], "  |  ", self.brett[7], "  |  ", self.brett[8], "  |  ")
+
+class Spielzug(Spielfeld):
+
     def symbol(self, zeichen):
         print("")
         if self.zeichen == "X" or "x":
@@ -47,6 +52,7 @@ class Spielfeld():
                 elif self.brett[zahl] == 0:
                     self.brett[zahl] = self.figur
                     self.figur = "O"
+                    print(self.board())
             else:
                 print("Player", self.figur, "ist an der Reihe!")
                 zahl = int(input("Auf welches Feld wollen sie setzen: "))
@@ -56,13 +62,13 @@ class Spielfeld():
                 elif self.brett[zahl] == 0:
                     self.brett[zahl] = self.figur
                     self.figur = "X"
+                    print(self.board())
     
-    def board(self):
-        print(self.brett[0], "  |  ", self.brett[1], "  |  ", self.brett[2], "\n  |  ", self.brett[3], "  |  ", self.brett[4], "  |  ", self.brett[5], "\n  |  ", self.brett[6], "  |  ", self.brett[7], "  |  ", self.brett[8], "  |  ", self.brett[9])
+    
     def gewinnen(self):
         pass
 
-instanz1 = Spielfeld()
+instanz1 = Spielzug()
 
 print("########  ###                ########                          ########                      ")
 print("  ###            ######        ###     ######     ######         ###     ######     ######   ")
@@ -72,3 +78,4 @@ print("  ###     ###    ######        ###     ##### #    ######         ###     
 zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
 instanz1.symbol(zeichen)
 instanz1.spielzug()
+instanz1.board()
