@@ -54,6 +54,7 @@ class Spielzug(Spielfeld):
                     self.brett[zahl] = self.figur
                     self.figur = "O"
                     self.board()
+                    self.gewinnen()
             else:
                 print("Player", self.figur, "ist an der Reihe!")
                 zahl = int(input("Auf welches Feld wollen sie setzen: "))
@@ -65,6 +66,7 @@ class Spielzug(Spielfeld):
                     self.brett[zahl] = self.figur
                     self.figur = "X"
                     self.board()
+                    self.gewinnen()
     
     
     def gewinnen(self):
@@ -96,4 +98,3 @@ print("  ###     ###    ######        ###     ##### #    ######         ###     
 zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
 instanz1.symbol(zeichen)
 instanz1.spielzug()
-instanz1.board()
