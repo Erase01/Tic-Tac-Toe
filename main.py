@@ -14,6 +14,7 @@ class Spielfeld():
         self.player2 = ""
         self.zeichen = ""
         self.ingame = True
+        self.end = True
     
     def feld():
         print("   |    |   ")
@@ -70,35 +71,52 @@ class Spielzug(Spielfeld):
     
     
     def gewinnen(self):
-        if self.brett[0,1,2] == 'X' or self.brett[0,1,2] == 'O':
+        if self.brett[0:2] == 'X' or self.brett[0:2] == 'O':
             endwert = self.brett[1]
             print("Player", endwert, "hat Gewonnen!")
-        elif self.brett[3,4,5] == 'X' or self.brett[3,4,5] == 'O':
+            self.replay()
+        elif self.brett[3:5] == 'X' or self.brett[3:5] == 'O':
             endwert = self.brett[4]
             print("Player", endwert, "hat Gewonnen!")
-        elif self.brett[6,7,8] == 'X' or self.brett[6,7,8] == 'O':
+            self.replay()
+        elif self.brett[6:8] == 'X' or self.brett[6:8] == 'O':
             endwert = self.brett[7]
             print("Player", endwert, "hat Gewonnen!")
-        elif self.brett[0,4,8] == 'X' or self.brett[0,4,8] == 'O':
-            endwert = self.brett[1]
+            self.replay()
+        elif self.brett[0][4][8] == 'X' or self.brett[0][4][8] == 'O':
+            endwert = self.brett[4]
             print("Player", endwert, "hat Gewonnen!")
-        elif self.brett[2,4,6] == 'X' or self.brett[2,4,6] == 'O':
-            endwert = self.brett[1]
+            self.replay()
+        elif self.brett[2][4][6] == 'X' or self.brett[2][4][6] == 'O':
+            endwert = self.brett[4]
             print("Player", endwert, "hat Gewonnen!")
+            self.replay()
         elif self.brett != 0:
             print("Unentschieden!")
+            self.replay()
+        else:
+            return
 
     def replay(self):
         answer = str(input("Wollen Sie erneut spielen(yes/no)"))
-        
+        if answer == 'yes' or 'ja' or 'y' or 'j':
+            print("Spiel wird neu gestartet...")
+            return self.end
+        elif answer == 'no' or 'n' or 'nein':
+            print("Spiel wird beendet...")
+            self.end = False
+            return self.end
+
 
 instanz1 = Spielzug()
+while instanz1.end == True:
 
-print("########  ###                ########                          ########                      ")
-print("  ###            ######        ###     ######     ######         ###     ######     ######   ")
-print("  ###     ###    ###           ###     ##  ##     ###            ###     ##  ##     ####     ")
-print("  ###     ###    ######        ###     ##### #    ######         ###     ######     ###### \n")
 
-zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
-instanz1.symbol(zeichen)
-instanz1.spielzug()
+    print("########  ###                ########                          ########                      ")
+    print("  ###            ######        ###     ######     ######         ###     ######     ######   ")
+    print("  ###     ###    ###           ###     ##  ##     ###            ###     ##  ##     ####     ")
+    print("  ###     ###    ######        ###     ##### #    ######         ###     ######     ###### \n")
+
+    zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
+    instanz1.symbol(zeichen)
+    instanz1.spielzug()
