@@ -4,7 +4,7 @@
 # ----------
 #   |   |
 # Felder von 1-9 durchnummerieren
-
+# 5 Gewinn möglichkeiten
 
 class Spielfeld():
     
@@ -71,6 +71,20 @@ class Spielzug(Spielfeld):
         if self.brett[0,1,2] == 'X' or self.brett[0,1,2] == 'O':
             endwert = self.brett[1]
             print("Player", endwert, "hat Gewonnen!")
+        elif self.brett[3,4,5] == 'X' or self.brett[3,4,5] == 'O':
+            endwert = self.brett[4]
+            print("Player", endwert, "hat Gewonnen!")
+        elif self.brett[6,7,8] == 'X' or self.brett[6,7,8] == 'O':
+            endwert = self.brett[7]
+            print("Player", endwert, "hat Gewonnen!")
+        elif self.brett[0,4,8] == 'X' or self.brett[0,4,8] == 'O':
+            endwert = self.brett[1]
+            print("Player", endwert, "hat Gewonnen!")
+        elif self.brett[2,4,6] == 'X' or self.brett[2,4,6] == 'O':
+            endwert = self.brett[1]
+            print("Player", endwert, "hat Gewonnen!")
+        elif self.brett != 0:
+            print("Unentschieden!")
 
 instanz1 = Spielzug()
 
