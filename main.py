@@ -49,6 +49,7 @@ class Spielzug(Spielfeld):
                 self.brett[zahl]
                 if self.brett[zahl] != 0:
                     print("\nHier wurde bereits hingesetzt!")
+                    self.board()
                 elif self.brett[zahl] == 0:
                     self.brett[zahl] = self.figur
                     self.figur = "O"
@@ -59,6 +60,7 @@ class Spielzug(Spielfeld):
                 self.brett[zahl]
                 if self.brett[zahl] != 0:
                     print("\nHier wurde bereits hingesetzt!")
+                    self.board()
                 elif self.brett[zahl] == 0:
                     self.brett[zahl] = self.figur
                     self.figur = "X"
@@ -66,7 +68,9 @@ class Spielzug(Spielfeld):
     
     
     def gewinnen(self):
-        pass
+        if self.brett[0,1,2] == 'X' or self.brett[0,1,2] == 'O':
+            endwert = self.brett[1]
+            print("Player", endwert, "hat Gewonnen!")
 
 instanz1 = Spielzug()
 
