@@ -88,6 +88,10 @@ class Spielzug(Spielfeld):
         elif self.brett != 0:
             print("Unentschieden!")
 
+    def replay(self):
+        answer = str(input("Wollen Sie erneut spielen(yes/no)"))
+        
+
 instanz1 = Spielzug()
 
 print("########  ###                ########                          ########                      ")
