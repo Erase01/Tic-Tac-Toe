@@ -15,6 +15,7 @@ class Spielfeld():
         self.zeichen = ""
         self.ingame = True
         self.end = True
+
     
     def feld():
         print("   |    |   ")
@@ -71,6 +72,11 @@ class Spielzug(Spielfeld):
     
     
     def gewinnen(self):
+        item1 = {0,4,8}
+
+        #indexmap = dict((i, x) for i, x in enumerate(self.brett))
+        #print(indexmap)
+
         if self.brett[0:2] == 'X' or self.brett[0:2] == 'O':
             endwert = self.brett[1]
             print("Player", endwert, "hat Gewonnen!")
@@ -83,10 +89,12 @@ class Spielzug(Spielfeld):
             endwert = self.brett[7]
             print("Player", endwert, "hat Gewonnen!")
             self.replay()
-        elif self.brett[0][4][8] == 'X' or self.brett[0][4][8] == 'O':      # ToDo: überprüfung bearbeiten      
-            endwert = self.brett[4]
-            print("Player", endwert, "hat Gewonnen!")
-            self.replay()
+        elif self.brett[0] == 'X' or self.brett[0] == 'O':      # ToDo: überprüfung bearbeiten
+            if self.brett[4] == 'X' or self.brett[4] == 'O':
+                if self.brett[8] == 'X' or self.brett[8] == 'O':
+                    endwert = self.brett[4]
+                    print("Player", endwert, "hat Gewonnen!")
+                    self.replay()
         elif self.brett[2][4][6] == 'X' or self.brett[2][4][6] == 'O':
             endwert = self.brett[4]
             print("Player", endwert, "hat Gewonnen!")
