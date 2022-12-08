@@ -95,10 +95,12 @@ class Spielzug(Spielfeld):
                     endwert = self.brett[4]
                     print("Player", endwert, "hat Gewonnen!")
                     self.replay()
-        elif self.brett[2][4][6] == 'X' or self.brett[2][4][6] == 'O':
-            endwert = self.brett[4]
-            print("Player", endwert, "hat Gewonnen!")
-            self.replay()
+        elif self.brett[2] == 'X' or self.brett[2] == 'O':
+            if self.brett[4] == 'X' or self.brett[4] == 'O':
+                if self.brett[6] == 'X' or self.brett[6] == 'O':
+                    endwert = self.brett[4]
+                    print("Player", endwert, "hat Gewonnen!")
+                    self.replay()
         elif self.brett != 0:
             print("Unentschieden!")
             self.replay()
