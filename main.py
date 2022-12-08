@@ -72,7 +72,7 @@ class Spielzug(Spielfeld):
     
     
     def gewinnen(self):
-        item1 = {0,4,8}
+        #item1 = {0,4,8}
 
         #indexmap = dict((i, x) for i, x in enumerate(self.brett))
         #print(indexmap)
@@ -101,7 +101,7 @@ class Spielzug(Spielfeld):
                     endwert = self.brett[4]
                     print("Player", endwert, "hat Gewonnen!")
                     self.replay()
-        elif self.brett != 0:
+        elif self.brett[:] != 0:              #ToDo: Unentschieden bearbeiten
             print("Unentschieden!")
             self.replay()
         else:
@@ -110,12 +110,11 @@ class Spielzug(Spielfeld):
     def replay(self):
         answer = str(input("Wollen Sie erneut spielen(yes/no)"))
         if answer == 'yes' or 'ja' or 'y' or 'j':
-            print("Spiel wird neu gestartet...")
-            return self.end
+            print("Spiel wird neu gestartet...")                    #does not work so far
+            self.ingame = False
         elif answer == 'no' or 'n' or 'nein':
             print("Spiel wird beendet...")
-            self.end = False
-            return self.end
+            exit()
 
 
 instanz1 = Spielzug()
