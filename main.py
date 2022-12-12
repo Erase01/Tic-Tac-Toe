@@ -105,7 +105,7 @@ class Spielzug(Spielfeld):
             print("Unentschieden!")
             self.replay()
         else:
-            return
+            self.spielzug()
 
     def replay(self):
         answer = str(input("Wollen Sie erneut spielen(yes/no)"))
