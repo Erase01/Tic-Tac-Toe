@@ -109,7 +109,7 @@ class Spielzug(Spielfeld):
             print("Unentschieden!")
             self.replay()
         else:
-            return
+            self.spielzug()
 
     def test(self):
         for i in self.brett:
