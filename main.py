@@ -117,7 +117,25 @@ class Spielzug(Spielfeld):
                 entwert = i[1]
                 print("Player", entwert, "hat Gewonnen!")
                 self.replay()
-            
+            elif i[3:5] == 'X' or i[3:5] == 'O':
+                entwert = i[4]
+                print("Player", entwert, "hat Gewonnen!")
+            elif i[6:8] == 'X' or i[6:8] == 'O':
+                entwert = i[7]
+                print("Player", entwert, "hat Gewonnen!")
+            elif i[0] == 'X' and i[4] == 'X' and i[8] == 'X' or i[0] == 'O' and i[4] == 'O' and i[8] == 'O': 
+                endwert = i[4]
+                print("Player", endwert, "hat Gewonnen!")
+                self.replay()
+            elif i[2] == 'X' and i[4] == 'X' and i[6] == 'X' or i[2] == 'O' and i[4] == 'O' and i[6] == 'O': 
+                endwert = i[4]
+                print("Player", endwert, "hat Gewonnen!")
+                self.replay()
+            elif i[:] != 0:
+                print("Unentschieden!")
+                self.replay()
+            else:
+                return 
 
 
     def replay(self):
