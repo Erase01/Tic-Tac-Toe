@@ -76,7 +76,11 @@ class Spielzug(Spielfeld):
 
         #indexmap = dict((i, x) for i, x in enumerate(self.brett))
         #print(indexmap)
-
+        for i in self.brett:
+            if i[0] == 'X' and i[4] == 'X' and i[8] == 'X' or i[0] == 'O' and i[4] == 'O' and i[8] == 'O': 
+                endwert = i[4]
+                print("Player", endwert, "hat Gewonnen!")
+                self.replay()
         if self.brett[0:2] == 'X' or self.brett[0:2] == 'O':
             endwert = self.brett[1]
             print("Player", endwert, "hat Gewonnen!")
@@ -106,6 +110,15 @@ class Spielzug(Spielfeld):
             self.replay()
         else:
             return
+
+    def test(self):
+        for i in self.brett:
+            if i[0:2] == 'X' or i[0:2] == 'O':
+                entwert = i[1]
+                print("Player", entwert, "hat Gewonnen!")
+                self.replay()
+            
+
 
     def replay(self):
         answer = str(input("Wollen Sie erneut spielen(yes/no)"))
