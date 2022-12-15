@@ -135,7 +135,7 @@ class Spielzug(Spielfeld):
                 print("Unentschieden!")
                 self.replay()
             else:
-                return 
+                self.spielzug()
 
 
     def replay(self):
