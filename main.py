@@ -76,6 +76,7 @@ class Spielzug(Spielfeld):
 
         #indexmap = dict((i, x) for i, x in enumerate(self.brett))
         #print(indexmap)
+        '''
         for i in self.brett:
             if i[0] == 'X' and i[4] == 'X' and i[8] == 'X' or i[0] == 'O' and i[4] == 'O' and i[8] == 'O': 
                 endwert = i[4]
@@ -109,9 +110,9 @@ class Spielzug(Spielfeld):
             print("Unentschieden!")
             self.replay()
         else:
-            self.spielzug()
+            self.spielzug()'''
 
-    def test(self):
+    
         for i in self.brett:
             if i[0:2] == 'X' or i[0:2] == 'O':
                 entwert = i[1]
