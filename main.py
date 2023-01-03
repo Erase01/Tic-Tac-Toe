@@ -72,13 +72,11 @@ class Spielzug(Spielfeld):
     
     
     def gewinnen(self):
-        #item1 = {0,4,8}
-
-        #indexmap = dict((i, x) for i, x in enumerate(self.brett))
-        #print(indexmap)
-        #for i in range(len(self.brett)):
-        #    if i[0] == 'X' and i[4] == 'X' and i[8] == 'X':
-        #        print("Player X hat Gewonnen!")
+        
+        for i in range(len(self.brett)):
+            if i[0] == 'X' and i[4] == 'X' and i[8] == 'X':
+                print("Player X hat Gewonnen!")
+                break
 
         if self.brett[0:2] == 'X' or self.brett[0:2] == 'O':
             endwert = self.brett[1]
