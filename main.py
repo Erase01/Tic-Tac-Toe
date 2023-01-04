@@ -98,7 +98,7 @@ class Spielzug(Spielfeld):
                 endwert = self.brett[4]
                 print("Player", endwert, "hat Gewonnen!")
                 break
-            elif self.brett[:] == 'X' or 'O':              #ToDo: Unentschieden bearbeiten
+            elif all(y == 'X' or y == 'O' for y in self.brett):              #ToDo: Unentschieden bearbeiten
                 print("Unentschieden!")
                 break
             else:
