@@ -74,39 +74,40 @@ class Spielzug(Spielfeld):
     def gewinnen(self):
         
         for i in range(len(self.brett)):
-            if i[0] == 'X' and i[4] == 'X' and i[8] == 'X':
-                print("Player X hat Gewonnen!")
+            if self.brett[0] == 'X' and self.brett[4] == 'X' and self.brett[8] == 'X' or self.brett[0] == 'O' and self.brett[4] == 'O' and self.brett[8] == 'O':
+                endwert = self.brett[4]
+                print("Player", endwert, "hat Gewonnen!")
                 break
-
-        if self.brett[0:2] == 'X' or self.brett[0:2] == 'O':
-            endwert = self.brett[1]
-            print("Player", endwert, "hat Gewonnen!")
-            self.replay()
-        elif self.brett[3:5] == 'X' or self.brett[3:5] == 'O':
-            endwert = self.brett[4]
-            print("Player", endwert, "hat Gewonnen!")
-            self.replay()
-        elif self.brett[6:8] == 'X' or self.brett[6:8] == 'O':
-            endwert = self.brett[7]
-            print("Player", endwert, "hat Gewonnen!")
-            self.replay()
-        elif self.brett[0] == 'X' or self.brett[0] == 'O':      # ToDo: überprüfung bearbeiten (for Schleife for i in range(len(brett)))
-            if self.brett[4] == 'X' or self.brett[4] == 'O':
-                if self.brett[8] == 'X' or self.brett[8] == 'O':
-                    endwert = self.brett[4]
-                    print("Player", endwert, "hat Gewonnen!")
-                    self.replay()
-        elif self.brett[2] == 'X' or self.brett[2] == 'O':
-            if self.brett[4] == 'X' or self.brett[4] == 'O':
-                if self.brett[6] == 'X' or self.brett[6] == 'O':
-                    endwert = self.brett[4]
-                    print("Player", endwert, "hat Gewonnen!")
-                    self.replay()
-        elif self.brett[:] == 'X' or 'O':              #ToDo: Unentschieden bearbeiten
-            print("Unentschieden!")
-            self.replay()
-        else:
-            self.spielzug()
+            
+            elif self.brett[0:2] == 'X' or self.brett[0:2] == 'O':
+                endwert = self.brett[1]
+                print("Player", endwert, "hat Gewonnen!")
+                break
+            elif self.brett[3:5] == 'X' or self.brett[3:5] == 'O':
+                endwert = self.brett[4]
+                print("Player", endwert, "hat Gewonnen!")
+                break
+            elif self.brett[6:8] == 'X' or self.brett[6:8] == 'O':
+                endwert = self.brett[7]
+                print("Player", endwert, "hat Gewonnen!")
+                break
+            elif self.brett[0] == 'X' or self.brett[0] == 'O':      # ToDo: überprüfung bearbeiten (for Schleife for i in range(len(brett)))
+                if self.brett[4] == 'X' or self.brett[4] == 'O':
+                    if self.brett[8] == 'X' or self.brett[8] == 'O':
+                        endwert = self.brett[4]
+                        print("Player", endwert, "hat Gewonnen!")
+                        break
+            elif self.brett[2] == 'X' or self.brett[2] == 'O':
+                if self.brett[4] == 'X' or self.brett[4] == 'O':
+                    if self.brett[6] == 'X' or self.brett[6] == 'O':
+                        endwert = self.brett[4]
+                        print("Player", endwert, "hat Gewonnen!")
+                        break
+            elif self.brett[:] == 'X' or 'O':              #ToDo: Unentschieden bearbeiten
+                print("Unentschieden!")
+                break
+            else:
+                self.spielzug()
 
     def replay(self):
         answer = str(input("Wollen Sie erneut spielen(yes/no)"))
