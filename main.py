@@ -78,7 +78,6 @@ class Spielzug(Spielfeld):
                 endwert = self.brett[4]
                 print("Player", endwert, "hat Gewonnen!")
                 break
-            
             elif self.brett[0:2] == 'X' or self.brett[0:2] == 'O':
                 endwert = self.brett[1]
                 print("Player", endwert, "hat Gewonnen!")
@@ -91,18 +90,14 @@ class Spielzug(Spielfeld):
                 endwert = self.brett[7]
                 print("Player", endwert, "hat Gewonnen!")
                 break
-            elif self.brett[0] == 'X' or self.brett[0] == 'O':      # ToDo: überprüfung bearbeiten (for Schleife for i in range(len(brett)))
-                if self.brett[4] == 'X' or self.brett[4] == 'O':
-                    if self.brett[8] == 'X' or self.brett[8] == 'O':
-                        endwert = self.brett[4]
-                        print("Player", endwert, "hat Gewonnen!")
-                        break
-            elif self.brett[2] == 'X' or self.brett[2] == 'O':
-                if self.brett[4] == 'X' or self.brett[4] == 'O':
-                    if self.brett[6] == 'X' or self.brett[6] == 'O':
-                        endwert = self.brett[4]
-                        print("Player", endwert, "hat Gewonnen!")
-                        break
+            elif self.brett[0] == 'X' and self.brett[4] == 'X' and self.brett[8] == 'X' or self.brett[0] == 'O' and self.brett[4] == 'O' and self.brett[6] == 'O':           # ToDo: überprüfung bearbeiten (for Schleife for i in range(len(brett)))
+                endwert = self.brett[4]
+                print("Player", endwert, "hat Gewonnen!")
+                break
+            elif self.brett[2] == 'X' and self.brett[4] == 'X' and self.brett[6] == 'X' or self.brett[2] == 'O' and self.brett[4] == 'O' and self.brett[6] == 'O':
+                endwert = self.brett[4]
+                print("Player", endwert, "hat Gewonnen!")
+                break
             elif self.brett[:] == 'X' or 'O':              #ToDo: Unentschieden bearbeiten
                 print("Unentschieden!")
                 break
