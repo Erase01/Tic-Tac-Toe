@@ -103,6 +103,7 @@ class Spielzug(Spielfeld):
                 break
             else:
                 self.spielzug()
+        self.replay()
 
     def replay(self):
         
@@ -112,7 +113,7 @@ class Spielzug(Spielfeld):
         no_answer = ['no', 'n', 'nein']
 
         if answer.lower() in yes_answer:
-            print("Spiel wird neu gestartet...")                    #does not work so far
+            print("Spiel wird neu gestartet...")                    #yes answer does not work so far
             self.ingame = False
         elif answer.lower() in no_answer:
             print("Spiel wird beendet...")
