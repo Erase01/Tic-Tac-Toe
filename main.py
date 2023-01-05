@@ -117,6 +117,8 @@ class Spielzug(Spielfeld):
         elif answer.lower() in no_answer:
             print("Spiel wird beendet...")
             exit()
+        else:
+            print("Bitte geben Sie ja oder nein ein!")
 
 
 instanz1 = Spielzug()
