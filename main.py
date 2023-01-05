@@ -114,7 +114,7 @@ class Spielzug(Spielfeld):
 
         if answer.lower() in yes_answer:
             print("Spiel wird neu gestartet...")                    #yes answer does not work so far
-            self.ingame = False
+            
         elif answer.lower() in no_answer:
             print("Spiel wird beendet...")
             exit()
