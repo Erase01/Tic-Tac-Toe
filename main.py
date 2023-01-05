@@ -105,11 +105,16 @@ class Spielzug(Spielfeld):
                 self.spielzug()
 
     def replay(self):
-        answer = str(input("Wollen Sie erneut spielen(yes/no)"))
-        if answer == 'yes' or 'ja' or 'y' or 'j':
+        
+        answer = str(input("Wollen Sie erneut spielen (yes/no): "))
+        
+        yes_answer = ['yes', 'y', 'ja', 'j']
+        no_answer = ['no', 'n', 'nein']
+
+        if answer.lower() in yes_answer:
             print("Spiel wird neu gestartet...")                    #does not work so far
             self.ingame = False
-        elif answer == 'no' or 'n' or 'nein':
+        elif answer.lower() in no_answer:
             print("Spiel wird beendet...")
             exit()
 
