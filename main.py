@@ -6,6 +6,9 @@
 # Felder von 1-9 durchnummerieren
 # 5 Gewinn möglichkeiten
 
+import sys
+import os
+
 class Spielfeld():
     
     def __init__(self):
@@ -114,7 +117,7 @@ class Spielzug(Spielfeld):
 
         if answer.lower() in yes_answer:
             print("Spiel wird neu gestartet...")                    #yes answer does not work so far
-            
+            os.execv(sys.argv[0], sys.argv)
         elif answer.lower() in no_answer:
             print("Spiel wird beendet...")
             exit()
