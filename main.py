@@ -117,23 +117,26 @@ class Spielzug(Spielfeld):
 
         if answer.lower() in yes_answer:
             print("Spiel wird neu gestartet...")
-            os.execv(sys.executable, ['python'] + sys.argv)
+            start()
         elif answer.lower() in no_answer:
             print("Spiel wird beendet...")
             exit()
         else:
             print("Bitte geben Sie ja oder nein ein!")
 
+def start():
+    instanz1 = Spielzug()
+    while instanz1.end == True:
 
-instanz1 = Spielzug()
-while instanz1.end == True:
 
+        print("########  ###                ########                          ########                      ")
+        print("  ###            ######        ###     ######     ######         ###     ######     ######   ")
+        print("  ###     ###    ###           ###     ##  ##     ###            ###     ##  ##     ####     ")
+        print("  ###     ###    ######        ###     ##### #    ######         ###     ######     ###### \n")
 
-    print("########  ###                ########                          ########                      ")
-    print("  ###            ######        ###     ######     ######         ###     ######     ######   ")
-    print("  ###     ###    ###           ###     ##  ##     ###            ###     ##  ##     ####     ")
-    print("  ###     ###    ######        ###     ##### #    ######         ###     ######     ###### \n")
+        zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
+        instanz1.symbol(zeichen)
+        instanz1.spielzug()
 
-    zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
-    instanz1.symbol(zeichen)
-    instanz1.spielzug()
+if __name__ == "__main__":
+    start()
