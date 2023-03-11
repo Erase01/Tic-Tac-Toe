@@ -83,7 +83,7 @@ class Spielzug(Spielfeld):
                 endwert = self.brett[7]
                 print("Player", endwert, "hat Gewonnen!")
                 break
-            elif self.brett[0] == 'X' and self.brett[4] == 'X' and self.brett[8] == 'X' or self.brett[0] == 'O' and self.brett[4] == 'O' and self.brett[6] == 'O':
+            elif self.brett[0] == 'X' and self.brett[3] == 'X' and self.brett[6] == 'X' or self.brett[0] == 'O' and self.brett[3] == 'O' and self.brett[6] == 'O':
                 endwert = self.brett[4]
                 print("Player", endwert, "hat Gewonnen!")
                 break
