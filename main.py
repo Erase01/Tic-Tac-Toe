@@ -16,13 +16,6 @@ class Spielfeld():
         self.zeichen = ""
         self.ingame = True
 
-    
-    def feld():
-        print("   |    |   ")
-        print("------------")
-        print("   |    |   ")
-        print("------------")
-        print("   |    |   ")
 
     def board(self):
         print ("     ", self.brett[0], "  |  ", self.brett[1], "  |  ", self.brett[2], "\n     ", self.brett[3], "  |  ", self.brett[4], "  |  ", self.brett[5], "\n     ", self.brett[6], "  |  ", self.brett[7], "  |  ", self.brett[8])
