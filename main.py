@@ -22,7 +22,7 @@ class Spielfeld():
 
 class Spielzug(Spielfeld):
 
-    def symbol(self, zeichen):
+    def symbol(self, zeichen):      #Else
         print("")
         if self.zeichen == "X" or "x":
             #self.player1 = "X"
@@ -108,7 +108,7 @@ class Spielzug(Spielfeld):
 
     def replay(self):
         
-        answer = str(input("Wollen Sie erneut spielen (yes/no): "))
+        answer = str(input("Wollen Sie erneut spielen (yes/no): "))     #ToDo: Schleife, Try
         
         yes_answer = ['yes', 'y', 'ja', 'j']
         no_answer = ['no', 'n', 'nein']
