@@ -22,7 +22,7 @@ class Spielfeld():
 
 class Spielzug(Spielfeld):
 
-    def symbol(self, zeichen):      #Else
+    def symbol(self, zeichen):      #ToDo: Else
         print("")
         wertX = ["x", "X"]
         wertO = ["o", "O", "0"]
@@ -36,7 +36,9 @@ class Spielzug(Spielfeld):
             #self.player1 = "O"
             #self.player2 = "X"
             self.figur = "O"
-            
+        
+        else:
+            pass
 
     def spielzug(self):
         while self.ingame == True:
@@ -111,19 +113,20 @@ class Spielzug(Spielfeld):
 
     def replay(self):
         
-        answer = str(input("Wollen Sie erneut spielen (yes/no): "))     #ToDo: Schleife, Try
-        
-        yes_answer = ['yes', 'y', 'ja', 'j']
-        no_answer = ['no', 'n', 'nein']
+        while True:
+            answer = str(input("Wollen Sie erneut spielen (yes/no): "))     #ToDo: Schleife, Try
+            
+            yes_answer = ['yes', 'y', 'ja', 'j']
+            no_answer = ['no', 'n', 'nein']
 
-        if answer.lower() in yes_answer:
-            print("Spiel wird neu gestartet...")
-            start()
-        elif answer.lower() in no_answer:
-            print("Spiel wird beendet...")
-            exit()
-        else:
-            print("Bitte geben Sie ja oder nein ein!")
+            if answer.lower() in yes_answer:
+                print("Spiel wird neu gestartet...")
+                start()
+            elif answer.lower() in no_answer:
+                print("Spiel wird beendet...")
+                exit()
+            else:
+                print("Bitte geben Sie ja oder nein ein!")
 
 def start():
    
