@@ -4,7 +4,7 @@
 # ----------
 #   |   |
 # Felder von 1-9 durchnummerieren
-# 5 Gewinn möglichkeiten
+# 8 Gewinn möglichkeiten
 
 
 class Spielfeld():
@@ -24,12 +24,15 @@ class Spielzug(Spielfeld):
 
     def symbol(self, zeichen):
         print("")
-        if self.zeichen == "X" or "x":
+        wertX = ["x", "X"]
+        wertO = ["o", "O", "0"]
+
+        if zeichen in wertX:
             #self.player1 = "X"
             #self.player2 = "O"
             self.figur = "X"
 
-        elif self.zeichen == "O" or "o" or "0":
+        elif zeichen in wertO:
             #self.player1 = "O"
             #self.player2 = "X"
             self.figur = "O"
