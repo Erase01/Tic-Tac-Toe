@@ -38,7 +38,7 @@ class Spielzug(Spielfeld):
             self.figur = "O"
         
         else:
-            pass
+            print("Geben Sie entweder X oder O ein!")
 
     def spielzug(self):
         while self.ingame == True:
