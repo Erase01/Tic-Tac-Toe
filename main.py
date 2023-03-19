@@ -26,19 +26,20 @@ class Spielzug(Spielfeld):
         print("")
         wertX = ["x", "X"]
         wertO = ["o", "O", "0"]
-
-        if zeichen in wertX:
-            #self.player1 = "X"
-            #self.player2 = "O"
-            self.figur = "X"
-
-        elif zeichen in wertO:
-            #self.player1 = "O"
-            #self.player2 = "X"
-            self.figur = "O"
-        
-        else:
-            print("Geben Sie entweder X oder O ein!")
+        while True: 
+            try:
+                if zeichen in wertX:
+                    #self.player1 = "X"
+                    #self.player2 = "O"
+                    self.figur = "X" 
+                elif zeichen in wertO:
+                    #self.player1 = "O"
+                    #self.player2 = "X"
+                    self.figur = "O"
+                else:
+                    print("Geben Sie entweder X oder O ein!")
+            except ValueError:
+                print("Wählen Sie bitte eine der zu Verfügung stehenden Optionen!")
 
     def spielzug(self):
         while self.ingame == True:
