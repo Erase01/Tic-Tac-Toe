@@ -32,10 +32,12 @@ class Spielzug(Spielfeld):
                     #self.player1 = "X"
                     #self.player2 = "O"
                     self.figur = "X" 
+                    self.spielzug()
                 elif zeichen in wertO:
                     #self.player1 = "O"
                     #self.player2 = "X"
                     self.figur = "O"
+                    self.spielzug()
                 else:
                     print("Geben Sie entweder X oder O ein!")
             except ValueError:
@@ -140,7 +142,6 @@ def start():
 
     zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
     instanz1.symbol(zeichen)
-    instanz1.spielzug()
 
 if __name__ == "__main__":
     start()
