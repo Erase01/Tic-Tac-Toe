@@ -22,7 +22,7 @@ class Spielfeld():
 
 class Spielzug(Spielfeld):
 
-    def symbol(self, zeichen):      #ToDo: Else
+    def symbol(self, zeichen):
         print("")
         wertX = ["x", "X"]
         wertO = ["o", "O", "0"]
