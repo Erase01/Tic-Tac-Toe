@@ -140,7 +140,7 @@ def start():
     print("  ###     ###    ###           ###     ##  ##     ###            ###     ##  ##     ####     ")
     print("  ###     ###    ######        ###     ##### #    ######         ###     ######     ###### \n")
 
-    zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
+    zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))    # input in symbol funktion
     instanz1.symbol(zeichen)
 
 if __name__ == "__main__":
