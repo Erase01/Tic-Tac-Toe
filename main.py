@@ -46,7 +46,7 @@ class Spielzug(Spielfeld):
             print("")
             if self.figur == "X":
                 print("Player", self.figur, "ist an der Reihe!")
-                zahl = int(input("Auf welches Feld wollen sie setzen: "))
+                zahl = int(input("Auf welches Feld wollen sie setzen: "))   #ToDo: Nummerierung von 1-9 statt 0-8
                 self.brett[zahl]
                 if self.brett[zahl] != 0:
                     print("\nHier wurde bereits hingesetzt!")
