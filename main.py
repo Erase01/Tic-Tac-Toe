@@ -27,7 +27,7 @@ class Spielzug(Spielfeld):
         wertX = ["x", "X"]
         wertO = ["o", "O", "0"]
         while True: 
-            zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))    # input in symbol funktion
+            zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
             if zeichen in wertX:
                 #self.player1 = "X"
                 #self.player2 = "O"
@@ -115,7 +115,7 @@ class Spielzug(Spielfeld):
     def replay(self):
         
         while True:
-            answer = str(input("Wollen Sie erneut spielen (yes/no): "))     #ToDo: Schleife, Try
+            answer = str(input("Wollen Sie erneut spielen (yes/no): "))
             
             yes_answer = ['yes', 'y', 'ja', 'j']
             no_answer = ['no', 'n', 'nein']
