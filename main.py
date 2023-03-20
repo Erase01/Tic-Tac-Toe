@@ -22,26 +22,24 @@ class Spielfeld():
 
 class Spielzug(Spielfeld):
 
-    def symbol(self, zeichen):
+    def symbol(self):
         print("")
         wertX = ["x", "X"]
         wertO = ["o", "O", "0"]
         while True: 
-            try:
-                if zeichen in wertX:
-                    #self.player1 = "X"
-                    #self.player2 = "O"
-                    self.figur = "X" 
-                    self.spielzug()
-                elif zeichen in wertO:
-                    #self.player1 = "O"
-                    #self.player2 = "X"
-                    self.figur = "O"
-                    self.spielzug()
-                else:
-                    print("Geben Sie entweder X oder O ein!")
-            except ValueError:
-                print("Wählen Sie bitte eine der zu Verfügung stehenden Optionen!")
+            zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))    # input in symbol funktion
+            if zeichen in wertX:
+                #self.player1 = "X"
+                #self.player2 = "O"
+                self.figur = "X" 
+                self.spielzug()
+            elif zeichen in wertO:
+                #self.player1 = "O"
+                #self.player2 = "X"
+                self.figur = "O"
+                self.spielzug()
+            else:
+                print("Geben Sie entweder X oder O ein!")
 
     def spielzug(self):
         while self.ingame == True:
@@ -140,8 +138,7 @@ def start():
     print("  ###     ###    ###           ###     ##  ##     ###            ###     ##  ##     ####     ")
     print("  ###     ###    ######        ###     ##### #    ######         ###     ######     ###### \n")
 
-    zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))    # input in symbol funktion
-    instanz1.symbol(zeichen)
+    instanz1.symbol()
 
 if __name__ == "__main__":
     start()
