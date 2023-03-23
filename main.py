@@ -11,8 +11,6 @@ class Spielfeld():
     
     def __init__(self):
         self.brett = [0,0,0,0,0,0,0,0,0]
-        self.player1 = ""
-        self.player2 = ""
         self.zeichen = ""
         self.ingame = True
 
@@ -29,13 +27,9 @@ class Spielzug(Spielfeld):
         while True: 
             zeichen = str(input("Player 1, geben Sie ein ob sie X oder O nehmen möchten: "))
             if zeichen in wertX:
-                #self.player1 = "X"
-                #self.player2 = "O"
                 self.figur = "X" 
                 self.spielzug()
             elif zeichen in wertO:
-                #self.player1 = "O"
-                #self.player2 = "X"
                 self.figur = "O"
                 self.spielzug()
             else:
