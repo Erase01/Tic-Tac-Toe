@@ -40,7 +40,7 @@ class Spielzug(Spielfeld):
             print("")
             if self.figur == "X":
                 print("Player", self.figur, "ist an der Reihe!")
-                zahl = int(input("Auf welches Feld wollen sie setzen: "))   #ToDo: Nummerierung von 1-9 statt 0-8
+                zahl = int(input("Auf welches Feld wollen sie setzen: "))
                 if zahl < 1 or zahl > 9:
                     print("Wählen Sie bitte eine Zahl zwischen 1-9 aus!")
                     self.board()
