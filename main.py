@@ -41,27 +41,37 @@ class Spielzug(Spielfeld):
             if self.figur == "X":
                 print("Player", self.figur, "ist an der Reihe!")
                 zahl = int(input("Auf welches Feld wollen sie setzen: "))   #ToDo: Nummerierung von 1-9 statt 0-8
-                self.brett[zahl]
-                if self.brett[zahl] != 0:
-                    print("\nHier wurde bereits hingesetzt!")
+                if zahl < 1 or zahl > 9:
+                    print("Wählen Sie bitte eine Zahl zwischen 1-9 aus!")
                     self.board()
-                elif self.brett[zahl] == 0:
-                    self.brett[zahl] = self.figur
-                    self.figur = "O"
-                    self.board()
-                    self.gewinnen()
+                else:
+                    zahl = zahl - 1 
+                    self.brett[zahl]
+                    if self.brett[zahl] != 0:
+                        print("\nHier wurde bereits hingesetzt!")
+                        self.board()
+                    elif self.brett[zahl] == 0:
+                        self.brett[zahl] = self.figur
+                        self.figur = "O"
+                        self.board()
+                        self.gewinnen()
             else:
                 print("Player", self.figur, "ist an der Reihe!")
                 zahl = int(input("Auf welches Feld wollen sie setzen: "))
-                self.brett[zahl]
-                if self.brett[zahl] != 0:
-                    print("\nHier wurde bereits hingesetzt!")
+                if zahl < 0 or zahl > 9:
+                    print("Wählen Sie bitte eine Zahl zwischen 1-9 aus!")
                     self.board()
-                elif self.brett[zahl] == 0:
-                    self.brett[zahl] = self.figur
-                    self.figur = "X"
-                    self.board()
-                    self.gewinnen()
+                else:
+                    zahl = zahl - 1
+                    self.brett[zahl]
+                    if self.brett[zahl] != 0:
+                        print("\nHier wurde bereits hingesetzt!")
+                        self.board()
+                    elif self.brett[zahl] == 0:
+                        self.brett[zahl] = self.figur
+                        self.figur = "X"
+                        self.board()
+                        self.gewinnen()
     
     
     def gewinnen(self):
@@ -127,7 +137,7 @@ def start():
    
     instanz1 = Spielzug()
 
-    print("########  ###                ########                          ########                      ")
+    print("\n########  ###                ########                          ########                      ")
     print("  ###            ######        ###     ######     ######         ###     ######     ######   ")
     print("  ###     ###    ###           ###     ##  ##     ###            ###     ##  ##     ####     ")
     print("  ###     ###    ######        ###     ##### #    ######         ###     ######     ###### \n")
